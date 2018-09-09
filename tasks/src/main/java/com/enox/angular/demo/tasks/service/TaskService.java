@@ -5,5 +5,6 @@ import com.enox.angular.demo.tasks.domain.Task;
 public interface TaskService {
 
 	Iterable<Task> getListOfTasks();
+	Task saveTask (Task entity);
 
 }
