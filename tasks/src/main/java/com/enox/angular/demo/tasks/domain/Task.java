@@ -14,25 +14,59 @@ import lombok.Data;
 
 @Entity
 @Data
-@AllArgsConstructor
+//@AllArgsConstructor
 public class Task {
+//
+	public Task(Long id, String name, LocalDate dueDate, Boolean completed) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.dueDate = dueDate;
+		this.completed = completed;
+	}
 
 	@Id
 	@GeneratedValue
 	private Long id;
 	private String name;
-	@JsonFormat(pattern="YYYY-MM-DD")
-	private LocalDateTime dueDate;
+	@JsonFormat(pattern = "MM/dd/yyyy")
+	private LocalDate dueDate;
 	private Boolean completed;	
 
 	public Task() {}
 
+	
+	public Long getId() {
+		return id;
+	}
 
-	public Task(Long id, String name, LocalDateTime localDateTime, Boolean completed) {
-		super();
+	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
 		this.name = name;
-		this.dueDate = localDateTime;
+	}
+
+	public LocalDate getDueDate() {
+		return dueDate;
+	}
+
+	public void setDueDate(LocalDate dueDate) {
+		this.dueDate = dueDate;
+	}
+
+	public Boolean getCompleted() {
+		return completed;
+	}
+
+	public void setCompleted(Boolean completed) {
 		this.completed = completed;
 	}
+
+	
 }

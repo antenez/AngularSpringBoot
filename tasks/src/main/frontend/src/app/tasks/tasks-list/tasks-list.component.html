@@ -9,6 +9,7 @@
 			<input type="checkbox"
 				class="list-child"
 				(change)="onTaskChange($event, task)"
+				(click)="onSelect(task)"
 				[checked]="task.completed"/>
 				
 			<span ngClass="{{task.completed ? 'name completed' : 'name'}}">{{ task.name }}</span>
@@ -17,3 +18,8 @@
 		</div>
 	</li> 
 </ul>
+
+<div *ngIf="selectedTask">
+	<h2>{{selectedTask.name | uppercase}} is Selected</h2>
+	<div><span>id: </span>{{selectedTask.id}}</div>
+</div>
