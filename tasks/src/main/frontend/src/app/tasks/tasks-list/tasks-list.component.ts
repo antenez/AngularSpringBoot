@@ -29,7 +29,15 @@ export class TasksListComponent implements OnInit {
                     },
                     (error) => console.log(error)
                 );
-        }
+
+        /* Handle added task by subscription */
+        this.taskService.onTaskAdded
+             .subscribe(
+                 (newTask: Task) => {
+                     this.tasks.push(newTask);
+                }
+        );
+    }
     getDueDateLabel(task: Task) {
         return task.completed ? 'label-success' : 'label-primary';
 

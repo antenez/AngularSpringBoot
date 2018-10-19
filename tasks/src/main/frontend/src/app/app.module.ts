@@ -8,6 +8,7 @@ import { TasksListComponent } from './tasks/tasks-list/tasks-list.component';
 import { TaskService } from './tasks/task.service';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
     TasksListComponent
   ],
   imports: [
-    BrowserModule, HttpModule, AppRoutingModule
+    BrowserModule, HttpModule, AppRoutingModule, FormsModule
   ],
   providers: [TaskService],
   bootstrap: [AppComponent]
