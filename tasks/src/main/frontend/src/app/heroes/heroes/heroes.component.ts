@@ -36,6 +36,7 @@ export class HeroesComponent implements OnInit {
   // note return void but assign value to mapped propperty
   getHeroes(): void {
     console.log('get heroes ');
-    this.heroes  = this.heroService.getHeroes();
+    // this.heroes  = this.heroService.getHeroes();
+    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 }

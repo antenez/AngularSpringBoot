@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HeroesComponent } from './heroes/heroes/heroes.component';
 import { HeroDetailComponent } from './heroes/hero-detail/hero-detail.component';
 import { HeroServiceService } from './heroes/hero-service.service';
+import { MessagesComponent } from './heroes/messages/messages.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HeroServiceService } from './heroes/hero-service.service';
     TasksAddComponent,
     TasksListComponent,
     HeroesComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule, HttpModule, AppRoutingModule, FormsModule
