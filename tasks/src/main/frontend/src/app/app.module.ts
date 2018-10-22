@@ -9,6 +9,9 @@ import { TaskService } from './tasks/task.service';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { HeroesComponent } from './heroes/heroes/heroes.component';
+import { HeroDetailComponent } from './heroes/hero-detail/hero-detail.component';
+import { HeroServiceService } from './heroes/hero-service.service';
 
 
 @NgModule({
@@ -16,12 +19,15 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     TasksComponent,
     TasksAddComponent,
-    TasksListComponent
+    TasksListComponent,
+    HeroesComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule, HttpModule, AppRoutingModule, FormsModule
   ],
-  providers: [TaskService],
+  providers: [TaskService,
+              HeroServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
